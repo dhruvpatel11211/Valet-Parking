@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+<head>
+
+    <style>
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        #rcorners1 {
+            border-radius: 20px;
+            background: hsla(192, 95%, 49%, 0.3);
+            color: blue;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .button1 {
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            padding: 8px;
+
+        }
+
+        #vehicle-type {
+            background-color: hsla(39, 100%, 49%, 0.5);
+            padding: 5px;
+            color: rgb(255, 115, 0);
+            font-weight: 700;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Valet Parking</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <h1>Check Out</h1>
+    <center>
+
+        <form action="/pay/<%=vehicle._id%>" method="GET">
+            <div class="row">
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Customer Name</b></h4>
+                        <p>
+                            <%= vehicle.customer_name %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Phone Number</b></h4>
+                        <p>
+                            <%= vehicle.phone %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Vehicle Number</b></h4>
+                        <p>
+                            <%= vehicle.vehicle_no %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Vehicle Type</b></h4>
+                        <p id="vehicle-type">
+                            <%= vehicle.vehicle_type %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Vehicle Model</b></h4>
+                        <p>
+                            <%= vehicle.vehicle_model %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Check In Time</b></h4>
+                        <p>
+                            <%= vehicle.check_in %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Check Out Time</b></h4>
+                        <p>
+                            <%= checkOutTime %>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="container">
+                        <h4><b>Duration</b></h4>
+                        <p>
+                            <%= duration %> hours
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h1 id="rcorners1">
+                <span style="color: black; font-size: medium;">To Pay</span>
+                <br>
+                Rs. <%= toPay %>
+            </h1>
+            <input type="submit" class="button1" value="Proceed to Pay">
+
+        </form>
+       <br>
+       <a href="/refund/<%=vehicle._id%>"><button class="button1">Refund</button></a>
+    </center>
+</body>
+
+</html>

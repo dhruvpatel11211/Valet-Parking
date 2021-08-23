@@ -1,0 +1,25 @@
+<div class="header" id="myHeader">
+  <div class="topnavigation">
+    <h1 class="logo" style="color: rgb(158, 22, 28);">VALET PARKING</h1>
+    <!-- <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/gallery">Gallery</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav> -->
+  </div>
+</div>
+<% if(error && error.length > 0) {%>
+  <div class="alert">
+    <span class="closebtn closebtn-error" onclick="this.parentElement.style.display='none';">&times;</span>
+    <%=error%>
+  </div>
+  <% } %>
+  <% if(success && success.length > 0) {%>
+  <div class="alert alert-success" role="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <%=success%>
+  </div>
+  <% } %>

@@ -1,0 +1,38 @@
+<button class="open-button" onclick="openForm()"> <i class="fas fa-plus"></i>    Check In</button>
+    <div class="form-popup" id="myForm">
+        <form action="/checkin" class="form-container" method="POST">
+
+            <label for="vehicle_no"><b>Vehicle No</b></label>
+            <input name="vehicle_no" class="inputs" type="text" placeholder="Enter Vehicle number" required>
+
+            <label for="vehicle_model"><b>Vehicle Model</b></label>
+            <input name="vehicle_model" class="inputs" type="text" placeholder="Enter Vehicle Model" required>
+
+            <label for="phone"><b>Phone</b></label>
+            <input name="phone" class="inputs" type="text" placeholder="Phone" value="">
+
+            <label for="customer_name"><b>Customer Name</b></label>
+            <input name="customer_name" class="inputs" type="text" placeholder="Enter Name">
+
+            <label for="vehicle_type"><b>Vehicle Type</b></label>
+            <select name="vehicle_type" class="inputs">
+                <option value="" disabled selected>Select Vehicle Type</option>
+                <option value="8 wheeler">8 wheeler</option>
+                <option value="4 wheeler">4 wheeler</option>
+                <option value="2 wheeler">2 wheeler</option>
+            </select>
+
+            <button type="submit" class="btn">Check In</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>

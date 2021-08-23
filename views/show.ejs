@@ -1,0 +1,27 @@
+<div class="table">
+<table>
+    <thead>
+      <tr>
+        <th scope="col">Vehicle No</th>
+        <th scope="col">Vehicle Model</th>
+        <th scope="col">Vehicle Type</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Check in</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% Vehicles.forEach(function(vehicle){ %>
+            <tr id="row">
+                <td scope="row" data-label="Vehicle No"><%= vehicle.vehicle_no %></td>
+                <td data-label="Vehicle Model"><%= vehicle.vehicle_model %></td>
+                <td data-label="Vehicle Type"><span id="vehicle-type"><%= vehicle.vehicle_type %></span></td>
+                <td data-label="Phone"><%= vehicle.phone %></td>
+                <td data-label="Check in"><%= vehicle.check_in %></td>
+                <td data-label="Actions"><a href="/checkout/<%=vehicle._id %>">Check out</a></td>
+              </tr>
+        <% }); %>
+     
+    </tbody>
+  </table>
+</div>
